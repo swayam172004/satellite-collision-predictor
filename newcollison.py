@@ -8,7 +8,7 @@ Created on Thu Sep 18 20:35:14 2025
 # -*- coding: utf-8 -*-
 import os
 import numpy as np
-from skyfield.api import EarthSatellite, load, utc
+from skyfield.api import EarthSatellite, load
 from datetime import datetime
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -17,7 +17,8 @@ from sklearn.metrics import classification_report, confusion_matrix
 import joblib
 import streamlit as st
 import matplotlib.pyplot as plt
-
+from datetime import timezone
+utc = timezone.utc
 # -----------------------------
 # Parameters
 # -----------------------------
@@ -181,5 +182,6 @@ if st.button("🔍 Predict Collision"):
         # Conclusion
         st.subheader("Conclusion")
         st.markdown(conclusion)
+
 
    
